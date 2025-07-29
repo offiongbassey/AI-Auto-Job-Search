@@ -9,10 +9,10 @@ openai_api_base = os.getenv("OPENAI_API_BASE")
 
 JobSearchAgent = Agent(
     role="Job Researcher",
-    goal="Find recent, high-quality remote ML jobs (1–3 yrs experience) using public sources.",
+    goal="Find recent, high-quality remote {title} jobs ({years} yrs experience) using public sources.",
     backstory="""
         A focused online job researcher skilled in using search APIs and platforms like Google Jobs and RemoteOK 
-        to find relevant opportunities for junior to mid-level engineers.
+        to find relevant opportunities for {level} engineers.
     """,
     tools=[search_tool],
     verbose=True,
@@ -24,7 +24,7 @@ AnalysisAgent = Agent(
     goal="Analyze job listings and suggest best-fit roles and in-demand skills.",
     backstory="""
         A data-driven career strategist with insight into job market trends, ideal roles, and red flags 
-        for early-career machine learning engineers.
+        for early-career {title} engineers.
     """,
     tools=[docs_tool, file_tool],
     verbose=True,

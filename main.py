@@ -14,9 +14,15 @@ crew = Crew(
     planning=True
 )
 
+inputs = {
+    "title": "Machine Learning",
+    "years": "1-3",
+    "level": "beginner/intermediate"
+}
+
 for attempts in range(3):
     try:
-        result = crew.kickoff()
+        result = crew.kickoff(inputs=inputs)
 
         print("✅ Crew completed successfully.")
         break
